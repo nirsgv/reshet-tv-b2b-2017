@@ -1,0 +1,65 @@
+@ham-stroke-height: 4px;
+@ham-stroke-width: 24px;
+@ham-border-radius: 4px;
+@ham-background-color: rgba(255,255,255,0.75);
+@ham-background-color-pressed: rgba(255,255,255,1);
+.hamburger{
+  width: @ham-stroke-width;
+  height: 30px;
+  left: 10px;
+  position: absolute;
+  background-size: contain;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  @media @min1024{
+    display: none;
+  }
+  &:active .hamburger-box .hamburger-inner{
+    background-color: @ham-background-color-pressed;
+    &:before,&:after{
+      background-color: @ham-background-color-pressed;
+    }
+  }
+  .hamburger-box{
+    position: relative;
+    display: inline-block;
+    width: @ham-stroke-width;
+    height: 30px;
+    .hamburger-inner{
+      position: absolute;
+      width: @ham-stroke-width;
+      height: @ham-stroke-height;
+      transition-timing-function: ease;
+      transition-duration: .15s;
+      transition-property: transform;
+      border-radius: @ham-border-radius;
+      top: 50%;
+      display: block;
+      background-color: @ham-background-color;
+      &:before,&:after {
+        position: absolute;
+        width: @ham-stroke-width;
+        height: @ham-stroke-height;
+        transition-timing-function: ease;
+        transition-duration: .5s;
+        transition-property: bottom;
+        border-radius: @ham-border-radius;
+        display: block;
+        content: "";
+        background-color: @ham-background-color;
+      }
+      &:before {
+        bottom: -8px;
+      }
+      &:after {
+        bottom: 8px;
+      }
+      &:before,&:after {
+        .mob-menu-slide & {
+          bottom: 0px;
+        }
+      }
+    }
+  }
+}

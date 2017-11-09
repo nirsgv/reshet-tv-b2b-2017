@@ -1,0 +1,14 @@
+.fullscreen-video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+}
+.fullscreen-video-controls svg path#play-pause-svg-icon {
+  transition: all 1s ease-in-out;
+}
+.fullscreen-video-controls .play-pause-controls,
+.fullscreen-video-controls .mute-unmute-controls {
+  width: 100px;
+  height: 100px;
+  float: right;
+}

@@ -1,0 +1,185 @@
+
+header {
+  ul.exit-logos li {
+    //height: 40px;
+    &:last-child:after {
+      content: normal;
+    }
+    &>a {
+      display: inline-block;
+      overflow: hidden;
+      &>span.reader-indicator{
+        text-indent: -9999px;
+        display: inline-block;
+        overflow: hidden;
+        opacity: 0;
+      }
+    }
+    @media @min1024 {
+      height: auto;
+      &:after {
+        content: normal;
+      }
+    }
+  }
+  ul.sections {
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    @media @min1024 {
+      width: auto;
+      display: inline-block;
+    }
+    li {
+      margin-left: 10px;
+      cursor: pointer;
+      border-radius: 0 10px;
+      position: relative;
+      display: block;
+
+      &:last-child {
+        margin-left: 0;
+      }
+      @media @min1024 {
+        display: inline-block;
+        &:after {
+          content: normal;
+        }
+      }
+      &:hover a.app-nav-link {
+        @media @min1024 {
+          text-decoration: none;
+          cursor: pointer;
+          position: relative;
+          color: #fff;
+          background-color: #0582d4;
+          &:before {
+
+          }
+        }
+      }
+      a.app-nav-link {
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px 0;
+        padding: 2px 12px 5px 12px;
+        background-color: transparent;
+        transition: background-color 0.0s ease-in;
+        font-weight: 700;
+        .font-size(1.9);
+        //font-family: "almoni-tzar";
+        @media @min1024 {
+          line-height: 40px;
+          //font-family: "almoni";
+          .font-size(1.75);
+          &.active{
+            &:before {
+              content: normal;
+              right: auto;
+              left: 0;
+
+            }
+          }
+        }
+
+        &.active {
+          background-color: #0582d4;
+          text-decoration: none;
+          border-radius: 0 10px;
+          .App[data-color="#0582d4"] & {background-color: #0582d4}
+          .App[data-color="#02e1e0"] & {background-color: #02e1e0}
+          .App[data-color="#16b719"] & {background-color: #16b719}
+          .App[data-color="#f6143a"] & {background-color: #f6143a}
+          .App[data-color="#f86d12"] & {background-color: #f86d12}
+          .App[data-color="#f1bb00"] & {background-color: #f1bb00}
+          @media @min1024 {
+            background-color: none;
+            border-radius: 10px 0;
+          }
+          &:before {
+            bottom: -0px;
+            z-index: -1;
+            @media @min1024 {
+              animation-name: example-reverse;
+              animation-duration: .25s;
+              animation-fill-mode: forwards;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+header ul.sections li a.app-nav-link.active:before{
+  bottom: 7px;
+}
+header ul.sections li a.app-nav-link{
+  padding: 4px 12px;
+  &:before{
+    box-sizing: content-box;
+    position: absolute;
+    left: 0;
+    border-radius: 0;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #0582d4;
+    border-right: 10px solid transparent;
+    content: normal;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+
+    @media @min1024 {
+      animation-name: example;
+    }
+  }
+  .active & {
+    &:before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 10px solid #0582d4;
+      border-left: 10px solid transparent;
+      position: absolute;
+      right: 0px;
+      content: "";
+      .App[data-color="#0582d4"] & {border-top-color: #0582d4}
+      .App[data-color="#02e1e0"] & {border-top-color: #02e1e0}
+      .App[data-color="#16b719"] & {border-top-color: #16b719}
+      .App[data-color="#f6143a"] & {border-top-color: #f6143a}
+      .App[data-color="#f86d12"] & {border-top-color: #f86d12}
+      .App[data-color="#f1bb00"] & {border-top-color: #f1bb00}
+      @media @min1024 {
+        right: auto;
+        bottom: 20px;
+        background-color: none;
+      }
+    }
+  }
+  &:hover{
+    &:before {
+      @media @min1024 {
+        content: "";
+      }
+    }
+  }
+  &.active{
+    &:before{
+      @media @max1024 {
+        content: "";
+        left: auto;
+        right: 0;
+        border-right: 0px solid transparent;
+        border-top: 10px solid #0582d4;
+        border-left: 10px solid transparent;
+        .App[data-color="#0582d4"] & {border-top-color: #0582d4}
+        .App[data-color="#02e1e0"] & {border-top-color: #02e1e0}
+        .App[data-color="#16b719"] & {border-top-color: #16b719}
+        .App[data-color="#f6143a"] & {border-top-color: #f6143a}
+        .App[data-color="#f86d12"] & {border-top-color: #f86d12}
+        .App[data-color="#f1bb00"] & {border-top-color: #f1bb00}
+      }
+    }
+  }
+}
+

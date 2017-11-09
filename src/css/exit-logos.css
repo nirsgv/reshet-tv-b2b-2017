@@ -1,0 +1,12 @@
+ul.exit-logos li a {
+  background-size: cover;
+}
+ul.exit-logos li a.reshet {
+  background-image: url(../img/x.svg);
+}
+ul.exit-logos li a.yummies {
+  background-image: url(../img/yummies.svg);
+}
+ul.exit-logos li a.mood {
+  background-image: url(../img/mood.svg);
+}

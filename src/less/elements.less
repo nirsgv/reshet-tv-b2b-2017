@@ -1,0 +1,45 @@
+@import "imports.less";
+
+@marg : 1rem;
+@border-radius : 35px;
+@border-radius-minor : 15px;
+
+.point{
+  cursor: pointer;
+}
+
+.custom-border-radius-top-right-only{
+  border-radius: 0 @border-radius-minor 0 0;
+}
+.custom-border-radius-bottom-left-only{
+  border-radius: 0 0 0 @border-radius-minor;
+}
+.custom-border-radius{
+  border-radius: 0 @border-radius;
+}
+.custom-border-radius-minor{
+  border-radius: 0 @border-radius-minor;
+}
+.custom-filter-shadow{
+  filter: drop-shadow(0px 16px 20px rgba(0,0,0,0.45));
+}
+.icon-shadow{
+  filter: drop-shadow(0px 3px 10px #666);
+}
+.pointer-events-all{
+  pointer-events: auto;
+}
+.pointer-events-none{
+  pointer-events: none;
+}
+.fixed-full{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@custom-dark-grey: #222325;
+@fullscreen-video-controls-size-mob: 30px;
+@fullscreen-video-controls-size-desk: 40px;

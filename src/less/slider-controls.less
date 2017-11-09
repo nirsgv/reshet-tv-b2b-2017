@@ -1,0 +1,239 @@
+@import "imports.less";
+
+
+.slider-controls{
+  .pointer-events-none;
+  .slider-nav{
+    .slider-btn{
+      .pointer-events-all;
+      position: absolute;
+      bottom: 58px;
+      right: 60px;
+      width: 38px;
+      height: 38px;
+      background-color: #02e1e0;
+      background-repeat: no-repeat;
+      .font-size(6);
+      line-height: 36px;
+      text-align: center;
+      transition: color 0.1s ease,background-color 0.1s ease,background-size 0.1s linear;
+      cursor: pointer;
+      background-size: 12px;
+      .App[data-color="#0582d4"] & {background-color: #0582d4}
+      .App[data-color="#02e1e0"] & {background-color: #02e1e0}
+      .App[data-color="#16b719"] & {background-color: #16b719}
+      .App[data-color="#f6143a"] & {background-color: #f6143a}
+      .App[data-color="#f86d12"] & {background-color: #f86d12}
+      .App[data-color="#f1bb00"] & {background-color: #f1bb00}
+      span{
+        display: none;
+      }
+      &.prev{
+      }
+      &.next{
+        right: 110px;
+      }
+      &:active:not(.disabled){
+        background-size: 10px;
+        animation-name: arrow-press;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  ul.bullets{
+    display: block;
+    position: relative;
+    width: ~'calc(100% - 92px)';
+    right: 46px;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    .pointer-events-all;
+    @media @min1024{
+      display: none;
+    }
+    li.dot{
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      background: white;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: #ececec;
+      &.minidot{
+        width: 7px;
+        height: 7px;
+      }
+      &.active{
+        .App[data-color="#0582d4"] & {background-color: #0582d4}
+        .App[data-color="#02e1e0"] & {background-color: #02e1e0}
+        .App[data-color="#16b719"] & {background-color: #16b719}
+        .App[data-color="#f6143a"] & {background-color: #f6143a}
+        .App[data-color="#f86d12"] & {background-color: #f86d12}
+        .App[data-color="#f1bb00"] & {background-color: #f1bb00}
+      }
+      margin-left: 10px;
+      &:last-child{
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+div.slider-controls{
+  section.monthly &, section.bottom-line &, .bottom-line-bkg-overlay &{
+    //outline: 4px dashed red;
+    position: fixed;
+    bottom: 0;
+    height: 46px;
+    width: 100%;
+    right: 0;
+    z-index: 99;
+    .slider-nav{
+      //outline: 4px dashed blue;
+      width: 100%;
+      right: 0;
+      bottom: 0;
+      background: #292b30;
+      height: 100%;
+
+      @media @min1024{
+        height: auto;
+        background: none;
+      }
+      .slider-btn{
+        bottom: 0;
+        top: auto;
+        //outline: 4px dashed purple;
+        &.next,&.prev{
+          border-radius: 0;
+          background-position: center center;
+        }
+        &.next{
+          background-image: url(../img/pointer-arrow-next.png);
+        }
+        &.prev{
+          background-image: url(../img/pointer-arrow-prev.png);
+        }
+      }
+    }
+  }
+  .slider-nav{
+    section.home & {
+      position: absolute;
+      height: 38px;
+      width: 52px;
+      bottom: 30px;
+      top: 12px;
+      left: 20px;
+      @media @min1024{
+        left: auto;
+        top: auto;
+        bottom: 30px;
+        right: 35px;
+        width: 84px;
+      }
+    }
+    .slider-btn{
+      position: absolute;
+      transition: color 0.1s ease,background-color 0.1s ease;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      text-align: center;
+      section.home & {
+        bottom: 0px;
+        right: 60px;
+        width: 24px;
+        height: 24px;
+        color: #222;
+        background-color: #02e1e0;
+        background-position: center center;
+        .font-size(6);
+        line-height: 36px;
+        background-size: 8px 14px;
+        @media @min1024{
+          width: 38px;
+          height: 38px;
+          background-size: 12px 20px;
+
+        }
+      }
+      section.monthly &, section.bottom-line &, .bottom-line-bkg-overlay &{
+        position: fixed;
+        right: 0;
+        width: 46px;
+        height: 46px;
+        text-indent: -9999px;
+        background-color: #494c55;
+        background-repeat: no-repeat;
+        background-position: 34px 22px;
+        @media @min1024{
+          width: 74px;
+          height: 74px;
+          transform: translateY(-50%);
+          top: 50%;
+        }
+      }
+      &.prev{
+        section.home & {
+          right: 0;
+          border-radius: 0;
+          background-image: url(../img/pointer-arrow-prev.png);
+        }
+        section.monthly &, section.bottom-line &, .bottom-line-bkg-overlay &{
+          @media @min1024{
+            border-radius: 0 0 0 15px ;
+          }
+        }
+      }
+      &.next{
+        section.home & {
+          left: 0px;
+          right: auto;
+          background-image: url(../img/pointer-arrow-next.png);
+        }
+        section.monthly &, section.bottom-line &, .bottom-line-bkg-overlay & {
+          left: 0;
+          right: auto;
+          @media @min1024{
+            border-radius: 0 0 15px 0 ;
+          }
+        }
+      }
+      &.disabled{
+        section.home & {
+          background-color: #444;
+          color: #222;
+        }
+        section.monthly &, section.bottom-line &, .bottom-line-bkg-overlay & {
+          background-color: #444;
+          color: #222;
+        }
+      }
+
+      span{
+        user-select: none;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

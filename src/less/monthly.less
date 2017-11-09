@@ -1,0 +1,349 @@
+section.monthly{
+  //background: red;
+  right: @marg*1;
+  width: ~'calc(100% - (@{marg}*2))';
+  overflow: hidden;
+  overflow-y: scroll;
+  top: 20px;
+  height: ~'calc(100% - 76px)';
+  @media @min1024{
+  height: ~'calc(100% - 126px)';
+    top: auto;
+    bottom: 100px;
+    overflow-y: hidden;
+    height: 50%;
+    right: @marg*8;
+    width: ~'calc(100% - (@{marg}*16))';
+
+
+    top: auto;
+
+    bottom: 40px;
+
+  }
+  .month{
+    width: 100%;
+    height: 70%;
+    position: relative;
+    @media @min1024{
+      position: absolute;
+      bottom: 80px;
+    }
+    .custom-filter-shadow;
+    ul{
+      list-style: none;
+    }
+    ul.weeks{
+      @media @min1024{
+        height: 100%;
+        overflow: hidden;
+      }
+      li.week{
+        transition-timing-function: ease-in;
+        animation-duration: 0.3s;
+        @media @min1024{
+          height: 100%;
+          overflow: hidden;
+        }
+
+        &.offset-right.from-offset-right{
+          animation-name: center-to-left;
+        }
+        &.offset-right.from-offset-left{
+        }
+        &.offset-left.from-offset-left{
+          animation-name: center-to-right;
+        }
+        &.offset-center,&.offset-right,&.offset-left{
+          position: absolute;
+          width: 100%;
+        }
+        &.offset-center{
+          transform: translateX(0%);
+        }
+        &.offset-right{
+          transform: translateX(100%);
+        }
+        &.offset-left{
+          transform: translateX(-100%);
+        }
+        &.offset-center.from-offset-left{
+          animation-name: right-to-center;
+
+        }
+        &.offset-center.from-offset-right{
+          animation-name: left-to-center;
+        }
+        ul.week-days{
+          @media @min1024{
+            height: 100%;
+            overflow: hidden;
+          }
+          li.day-schedule-item{
+            overflow: hidden;
+            width: 100%;
+            float: right;
+            margin-bottom: 10px;
+
+            @media @min1024{
+              margin-bottom: 0px;
+              width: 25%;
+              height: 100%;
+              overflow: hidden;
+            }
+            .day-flush{
+              overflow: hidden;
+              position: relative;
+              @media @min1024{
+                height: 100%;
+                overflow: hidden;
+              }
+            }
+            label.date{
+              float: right;
+              width: 35%;
+              text-align: center;
+              .custom-border-radius-bottom-left-only;
+              background: linear-gradient(135deg, rgba(38,39,39,0.8) 0%,rgba(21,22,22,0.8) 100%);
+              color: #fff;
+              height: 100%;
+              position: absolute;
+              @media @min1024{
+                height: 100%;
+                right: 0;
+              }
+              span.one-liner{
+                white-space: nowrap;
+                display: block;
+                width: 100%;
+                position: relative;
+                float: right;
+                text-align: center;
+                margin: 8px 0px 4px 0px;
+                @media @min1024{
+                  margin: 0;
+                }
+              }
+              hr.num-day-seporator{
+                display: block;
+                width: 75%;
+                margin: 0 auto;
+                background-color: #fff;
+                height: .75vw;
+                outline: none;
+                border: none;
+                .App[data-color="#0582d4"] & {background-color: #0582d4;}
+                .App[data-color="#02e1e0"] & {background-color: #02e1e0;}
+                .App[data-color="#16b719"] & {background-color: #16b719;}
+                .App[data-color="#f6143a"] & {background-color: #f6143a;}
+                .App[data-color="#f86d12"] & {background-color: #f86d12;}
+                .App[data-color="#f1bb00"] & {background-color: #f1bb00;}
+                @media @min1024{
+                  height: 4px;
+                }
+              }
+              time{
+                display: inline-block;
+                &.num-day{
+                  display: block;
+                  font-weight: bold;
+                  font-size: 16vw;
+                  width: 100%;
+                  margin: 2vw auto 0 auto;
+                  padding:  0.25vw 0;
+                  @media @min1024{
+                    line-height: 90px;
+                    .font-size(11.4);
+                    margin: 30px auto 0 auto;
+                    font-family: almoni-tzar!important;;
+                  }
+                }
+                &.txt-month{
+                  marin: auto;
+                  text-align: center;
+                  font-size: 4.5vw;
+                  font-weight: 800;
+                  padding: 0.25vw  0 ;
+                  @media @min1024{
+                    margin-left: 2px;
+                    height: 30px;
+                    padding: 0;
+                    line-height: 33px;
+                    .font-size(1);
+                    //float: right;
+                  }
+                  @media @min1024{
+                    .font-size(2.6);
+                  }
+                }
+                &.num-year{
+                  margin: auto;
+                  font-size: 4.5vw;
+                  font-weight: 800;
+                  @media @min1024{
+                    margin-right: 2px;
+                    height: 30px;
+                    padding: 0;
+                    line-height: 33px;
+                      .font-size(2.6);
+                  }
+
+                }
+                &.txt-day{
+                  font-size: 4.5vw;
+                  color: #fff;
+                  background-color: @custom-dark-grey;
+                  margin: 3px auto 0 auto;
+                  padding: 0 10px;
+                  border-radius: 0 10px;
+                  position: relative;
+                  clear: both;
+                  width: 75%;
+                  .App[data-color="#0582d4"] & {background-color: #0582d4;&:after{border-top-color: #0582d4;}}
+                  .App[data-color="#02e1e0"] & {background-color: #02e1e0;&:after{border-top-color: #02e1e0;}}
+                  .App[data-color="#16b719"] & {background-color: #16b719;&:after{border-top-color: #16b719;}}
+                  .App[data-color="#f6143a"] & {background-color: #f6143a;&:after{border-top-color: #f6143a;}}
+                  .App[data-color="#f86d12"] & {background-color: #f86d12;&:after{border-top-color: #f86d12;}}
+                  .App[data-color="#f1bb00"] & {background-color: #f1bb00;&:after{border-top-color: #f1bb00;}}
+                  @media @min1024{
+                    .font-size(2);
+                  }
+                  &:after {
+                    content: "";
+                    box-sizing: content-box;
+                    position: absolute;
+                    right: 0;
+                    bottom: -5px;
+                    border-radius: 0;
+                    z-index: 5;
+                    width: 0;
+                    height: 0;
+                    border-top: 5px solid transparent;
+                    border-color: @custom-dark-grey;
+                    border-left: 5px solid transparent;
+                  }
+                }
+              }
+            }
+            .items{
+              width: 65%;
+              float: left;
+              padding-right: @marg;
+              padding-left: 0;
+              @media @min1024{
+                padding-left: @marg;
+                float: left;
+                height: 100%;
+                overflow: hidden;
+              }
+              >div.item{
+                display: block;
+                height: 50%;
+                overflow: hidden;
+                padding-bottom: @marg;
+                &:last-child{
+                  padding-bottom: 0;
+                }
+                @media @min1024{
+                  &.w100{
+                    height: 100%;
+                  }
+                  &.w75{
+                    height: 75%;
+                  }
+                  &.w33{
+                    height: 33.333%;
+                  }
+                  &.w25{
+                    height: 25%;
+                  }
+                }
+                .inner-show-box{
+                  display: block;
+                  background-size: cover;
+                  background-position: center center;
+                  position: relative;
+                  border-radius: 0 0 0 8px;
+                  overflow: hidden;
+                  min-height: 46vw;
+                  @media @min1024{
+                    min-height: auto;
+                    height: 100%;
+                    overflow: hidden;
+                  }
+                  time.air-time{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: auto;
+                    height: auto;
+                    font-weight: 600;
+                    color: @custom-dark-grey;
+                    background: #fff;
+                    outline: 1px solid #dedede;
+                    text-align: center;
+                    border-radius: 0 0 0 8px;
+                    font-family: "Open Sans Hebrew";
+                    font-size: 3vw;
+                    padding: 1vw 1.2vw;
+                    line-height: 26px;
+                    @media @min1024{
+                      padding: 0;
+                      .font-size(1.8);
+                      height: 26px;
+                      width: 80px;
+                      line-height: 26px;
+
+                    }
+                  }
+                }
+              }
+            }
+
+            &:last-child .items{
+              padding-left: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .pdf-print{
+    //border-top: 1px solid #000;
+    margin-top: 10px;
+    display: none;
+    @media @min1024{
+      display: inline-block;
+      position: absolute;
+      bottom: 40px;
+    }
+    a.print-link{
+      margin-top: 0px;
+      text-decoration: none;
+      background-color: #02e1e0;
+      position: relative;
+      display: inline-block;
+      color: @custom-dark-grey;
+      line-height: 14px;
+      .custom-border-radius-bottom-left-only;
+      .font-size(2.2);
+      background-image: url(../img/pdf-print-icon.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: right center;
+      background-origin: content-box;
+      padding: 5px 4px 5px 10px;
+      .pointer-events-all;
+      .point;
+      height: 100%;
+      width: 100%;
+      span.print-txt{
+        margin-right: 26px;
+        font-size: 14px;
+        font-size: 1.4rem;
+        .font-size(1.4);
+        .pointer-events-none;
+      }
+    }
+  }
+}

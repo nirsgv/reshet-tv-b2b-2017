@@ -1,0 +1,33 @@
+.fullscreen-video-controls{
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  display: none;
+  @media @min1024{
+    display: block;
+  }
+  .pointer-events-all;
+  &.disable-pointer-events{
+    .pointer-events-none;
+  }
+  svg{
+    path#play-pause-svg-icon{
+      transition: all 1s ease-in-out;
+    }
+  }
+  .play-pause-controls,.mute-unmute-controls{
+    width: @fullscreen-video-controls-size-mob;
+    height: @fullscreen-video-controls-size-mob;
+    float: right;
+    opacity: .5;
+    transition: opacity 0.1s ease-in-out;
+    @media @min1024{
+      width: @fullscreen-video-controls-size-desk;
+      height: @fullscreen-video-controls-size-desk;
+    }
+    &:hover,&:active{
+      opacity: 1;
+    }
+  }
+}
+

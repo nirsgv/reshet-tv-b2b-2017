@@ -1,0 +1,197 @@
+header {
+  z-index: 101;
+  position: relative;
+  height: 50px;
+  width: 100%;
+  top: 0;
+  background-color: rgba(50,50,50,0.15);
+  border-bottom: 1px solid rgba(250,250,250,0.15);
+  padding: 0px 0px 0px 40px;
+  //opacity: 1;
+    transition: top .5s ease-out;
+  &.refresh-site-animate{
+    top: -90px;
+  }
+  a.home-link-logo{
+    position: relative;
+    float: right;
+    right: auto;
+    top: 20%;
+    left: auto;
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    z-index: 99999;
+    @media @min1024{
+      width: 100px;
+      height: 50px;
+    }
+    .logo-click-trigger{
+      width: 80px;
+      height: 30px;
+      @media @min1024{
+        width: 100px;
+        height: 50px;
+      }
+    }
+  }
+
+  @media @min1024{
+    padding: 0 40px;
+    height: 80px;
+  }
+  ul.sections, ul.exit-logos {
+    li {
+      padding: 15px 0;
+      &:after {
+        content: normal;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 20px;
+        //border-color: #f6143a;
+        border-color: #6f6f6f;
+      }
+      .mob-menu-slide & {
+        &:after {
+          content: '';
+        }
+      }
+    }
+  }
+  nav{
+    position: fixed;
+    display: block;
+    top: 0px;
+    right: -200px;
+    opacity: 0;
+    transition: opacity 0.25s ease-in 0.25s;
+    width: 65%;
+    pointer-events: none;
+    z-index: -1;
+    .mob-menu-slide & {
+      pointer-events: auto;
+      opacity: 1;
+      right: 25%;
+    }
+    @media @min1024{
+      background: none;
+      pointer-events: auto;
+      right: auto;
+      transform: translateY(-50%);
+      top: 50%;
+      position: relative;
+      opacity: 1;
+      width: 100%;
+    }
+  }
+  .logo {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: inline-block;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    overflow: hidden;
+    position: absolute;
+    .point;
+    @media @min1024 {
+      margin-left: 20px;
+      float: right;
+      right: auto;
+      top: 50%;
+      left: auto;
+      position: relative;
+      width: 107px;
+      height: 62px;
+    }
+    svg#company-logo {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      left: 0;
+      g#group-paths {
+        transition: all 1.35s ease-in!important;
+      }
+    }
+  }
+  ul.exit-logos {
+    width: 100%;
+    list-style: none;
+    display: block;
+    width: auto;
+    height: auto;
+    position: relative;
+    text-align: left;
+    top: auto;
+    transform: none;
+    white-space: nowrap;
+    overflow: hidden;
+    @media @min1024{
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+    }
+    li {
+      display: block;
+      float: right;
+      position: relative;
+      margin-left: 20px;
+      width: 100%;
+      display: block;
+      white-space: nowrap;
+      width: 100%;
+      height: 52px;
+      &:last-child{
+        margin-left: 0;
+      }
+      @media @min1024 {
+        display: inline-block;
+        width: 60px;
+        white-space: pre-wrap;
+      }
+      a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        //background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: right top;
+        @media @min1024 {
+          top: 0;
+          background-size: contain;
+          background-position: center center;
+        }
+        &.reshet {
+          background-image: url(../img/exit-logos/white/reshet.png);
+        }
+        &.yummies {
+          background-image: url(../img/exit-logos/white/yummies.png);
+        }
+        &.mood {
+          background-image: url(../img/exit-logos/white/mood.png);
+        }
+        &.mail {
+          background-image: url(../img/exit-logos/white/mail.png);
+        }
+      }
+    }
+  }
+}
+
+header{
+  @media (orientation: landscape) and @max1024{
+    li{
+    height: 38px!important;
+    padding: 8px 0!important;
+    }
+  }
+}

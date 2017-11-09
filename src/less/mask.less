@@ -1,0 +1,58 @@
+.mask-spa-wrp{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 19;
+  opacity: 1;
+  &.refresh-site-animate{
+    animation-name: app-refresh;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  svg#spa-mask{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    g#my-masked-g{
+      width: 100%;
+      height: 100%;
+    }
+    rect#bkg{
+      width: 100%;
+      height: 100%;
+
+    }
+
+  }
+}
+g#gAnimated{
+  transform-origin: 50% 50%;
+  animation-timing-function: ease-in;
+  margin: auto;
+}
+g#cen{
+    outline: 4px dashed red;
+}
+
+svg#overflow{
+  overflow: visible;
+}
+#noise-bkg{
+}
+
+rect#bottom-white-layer{
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  background-position: center;
+  mix-blend-mode: color-dodge;
+  opacity: 0.95;
+  .refresh-site-animate & {
+    animation-name: white-off;
+    animation-duration: 3.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+}

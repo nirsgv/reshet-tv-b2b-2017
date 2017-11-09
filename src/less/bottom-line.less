@@ -1,0 +1,184 @@
+section.bottom-line {
+  min-height: auto;
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  padding: 0 10px;
+  height: 100%;
+  label.section-label{
+    top: 20px;
+    @media @min1024 {
+      top: -64px;
+    }
+  }
+  @media @min1024 {
+    position: relative;
+    height: auto;
+    height: ~'calc(100% - 200px)';
+  }
+  .slick-slider {
+    direction: ltr;
+  }
+  .slider {
+    direction: ltr;
+  }
+  .full-screen-button-wrp{
+    width: 200px;
+    height: 30px;
+    bottom: -40px;
+    position: absolute;
+    button.full-screen-button{
+      outline: none;
+      border: none;
+      background-image: url(../img/fs-bottom-line-icon.png);
+      background-repeat: no-repeat;
+      padding: 7px 10px 6px 7px;
+      background-position: right center;
+      background-origin: content-box;
+      background-size: 20px;
+      position: absolute;
+      bottom: 10px;
+      .point;
+      .custom-filter-shadow;
+      .custom-border-radius-minor;
+      .App[data-color="#0582d4"] & {background-color: #0582d4}
+      .App[data-color="#02e1e0"] & {background-color: #02e1e0}
+      .App[data-color="#16b719"] & {background-color: #16b719}
+      .App[data-color="#f6143a"] & {background-color: #f6143a}
+      .App[data-color="#f86d12"] & {background-color: #f86d12}
+      .App[data-color="#f1bb00"] & {background-color: #f1bb00}
+      @media @min1024 {
+        bottom: auto;
+      }
+      span.txt{
+        font-family: almoni-tzar;
+        .font-size(1.4);
+        margin-top: 2px;
+        display: inline-block;
+        margin-right: 29px;
+      }
+    }
+  }
+  @media @min1024 {
+    padding: 0;
+    //width: auto;
+  }
+  .bottom-line-items-wrp{
+    position: relative;
+    bottom: 0;
+    color: #444;
+    right: 50%;
+    height: ~'calc(100% - 100px)';
+    //outline: 4px dashed yellow;
+    transform: translateX(50%);
+    width: 100%;
+    .custom-filter-shadow;
+    @media (orientation: landscape) and @max1024 {
+      width: 65%;
+    }
+    @media @min1024 {
+      //width: 770px;
+      width: 60%;
+      height: auto;
+      bottom: auto;
+      top: 50%;
+      transform: translate(50%,-50%);
+    }
+    @media screen and ( max-height: 840px ) and ( min-width: 640px ){
+      width: 40%;
+    }
+    &.disabled{
+    }
+  }
+  ul.bottom-line-items{
+    //outline: 4px dashed mediumvioletred;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    height: 0;
+    padding-bottom: 56.25%;
+    top: 50%;
+    transform: translateY(-50%);
+    .custom-border-radius;
+    @media @min1024 {
+      top: auto;
+      transform: none;
+    }
+    li.bottom-line-item{
+      //outline: 4px dashed blueviolet;
+      transition-timing-function: ease-in;
+      animation-duration: 0.4s;
+      &.offset-right.from-offset-right{
+        animation-name: center-to-left;
+      }
+      &.offset-right.from-offset-left{
+      }
+      &.offset-left.from-offset-left{
+        animation-name: center-to-right;
+      }
+      &.offset-center,&.offset-right,&.offset-left{
+        position: absolute;
+        width: 100%;
+      }
+      &.offset-center{
+        transform: translateX(0%);
+      }
+      &.offset-right{
+        transform: translateX(100%);
+      }
+      &.offset-left{
+        transform: translateX(-100%);
+      }
+      &.offset-center.from-offset-left{
+        animation-name: right-to-center;
+
+      }
+      &.offset-center.from-offset-right{
+        animation-name: left-to-center;
+      }
+    }
+  }
+  .cell {
+    position: relative;
+    width: auto;
+    cursor: pointer;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    @media @min1024 {
+      max-width: 100%;
+    }
+    img {
+      height: auto;
+      //max-height: 360px;
+      position: relative;
+      width: 100%;
+      .custom-border-radius;
+      @media @min1024 {
+        width: 100%;
+      }
+    }
+    .expand-icon {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      .icon-shadow;
+      @media @min1024 {
+        min-height: 100px;
+        min-width: 100px;
+      }
+      svg.expand-icon-svg {
+        width: 100%;
+        height: 100%;
+        transition: all 1s ease-in;
+        g#up-arrow, g#down-arrow {
+          transition: all 0.1s ease-in-out;
+        }
+      }
+    }
+  }
+}

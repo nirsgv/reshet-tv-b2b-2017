@@ -1,0 +1,139 @@
+/*
+.row {
+  width: 100%;
+  .fr;
+  margin-bottom: 25px;
+
+  @media @max480 {
+    // margin-bottom: 15px;
+  }
+}
+
+.divider {
+  width: 100%;
+  .fr;
+  height: 1px;
+}
+
+.col {
+  .border_box;
+  .fr;
+  padding: 0 7px;
+  // margin-bottom: 14px;
+
+  &.no-padding {
+    padding: 0;
+  }
+
+}
+
+.web-100 {
+  width: 100%;
+}
+.web-66 {
+  width: 66.66%;
+}
+.web-50 {
+  width: 50%;
+}
+.web-33 {
+  width: 33.33%;
+}
+.web-25 {
+  width: 25%;
+}
+.web-20 {
+  width: 20%;
+}
+.web-16 {
+  width: 16.666%;
+}
+.web-14 {
+  width: 14.285%;
+}
+
+
+@media @min481max800 {
+  .tablet-100 {
+    width: 100%;
+  }
+  .tablet-66 {
+    width: 66.66%;
+  }
+  .tablet-50 {
+    width: 50%;
+  }
+  .tablet-33 {
+    width: 33.33%;
+  }
+  .tablet-25 {
+    width: 25%;
+  }
+  .tablet-20 {
+    width: 20%;
+  }
+  .tablet-hide {
+    display: none !important;
+  }
+}
+
+@media @max480 {
+  .mobile-100 {
+    width: 100%;
+  }
+  .mobile-66 {
+    width: 66.66%;
+  }
+  .mobile-50 {
+    width: 50%;
+  }
+  .mobile-33 {
+    width: 33.33%;
+  }
+  .mobile-20 {
+    width: 20%;
+  }
+  .mobile-hide {
+    display: none !important;
+  }
+}
+
+
+.hide-in-web-only,
+.hide-in-large-web-only {
+  display: none !important;
+}
+.show-in-mobile-only {
+  display: none !important;
+}
+
+@media @max1000 {
+  .show-in-large-web-only {
+    display: none !important;
+  }
+  .hide-in-large-web-only {
+    display: block !important;
+  }
+}
+
+@media @max800 {
+  .show-in-web-only {
+    display: none !important;
+  }
+  .hide-in-web-only {
+    display: block !important;
+  }
+}
+
+@media @min481max800 {
+
+}
+
+@media @max480 {
+  .show-in-mobile-only {
+    display: block !important;
+  }
+  .hide-in-mobile-only {
+    display: none !important;
+  }
+}*/

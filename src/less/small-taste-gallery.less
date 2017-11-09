@@ -1,0 +1,34 @@
+.small-taste-bkg-overlay{
+  .fixed-full;
+  .pointer-events-none;
+  .dark-bkg{
+    transition: background-color 1s ease-in;
+    background-color: rgba(30,30,30,0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    &.active {
+      background-color: rgba(30,30,30,1);
+    }
+  }
+  video.small-taste-inner-video{
+    pointer-events: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    display: block;
+    max-height: 100%;
+    @media (orientation: landscape) and @max1024{
+      width: auto;
+      height: 100%;
+    }
+  }
+}
